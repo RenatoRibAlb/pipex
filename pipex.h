@@ -6,7 +6,7 @@
 /*   By: reribeir <reribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 07:02:50 by reribeir          #+#    #+#             */
-/*   Updated: 2025/02/07 14:28:35 by reribeir         ###   ########.fr       */
+/*   Updated: 2025/02/10 13:31:01 by reribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@
 # include <fcntl.h>
 # include "./libft/libft.h"
 
+int	main(int ac, char **av, char **envp);
 
 #endif
