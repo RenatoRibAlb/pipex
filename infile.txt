@@ -1,3 +1,4 @@
 agario
 é
 bom
+"wc -l" "cat -e"
