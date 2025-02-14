@@ -6,7 +6,7 @@
 /*   By: reribeir <reribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 10:38:08 by reribeir          #+#    #+#             */
-/*   Updated: 2025/02/14 13:44:48 by reribeir         ###   ########.fr       */
+/*   Updated: 2025/02/14 15:30:20 by reribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,11 @@ char	*path_finder(char **envp, char *av)
 		i++;
 	}
 	return(NULL);
+}
+
+void	renew_pipe(int	fd[2])
+{
+	close(fd[0]);
+	close(fd[1]);
+	pipe(fd);
 }
