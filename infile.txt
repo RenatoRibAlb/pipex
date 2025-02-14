@@ -1,4 +1,2 @@
-agario
-é
-bom
-"wc -l" "cat -e"
+agario é bom
+

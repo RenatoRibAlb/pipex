@@ -6,11 +6,11 @@
 /*   By: reribeir <reribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 15:23:17 by reribeir          #+#    #+#             */
-/*   Updated: 2024/10/29 17:02:58 by reribeir         ###   ########.fr       */
+/*   Updated: 2025/02/14 10:13:23 by reribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 int	ft_printhex(unsigned long int c, char *str)
 {

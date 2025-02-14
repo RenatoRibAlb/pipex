@@ -1,9 +1,5 @@
 NAME = libft.a
 
-PRINTF = printf/ 
-
-LIBFTPRINTF_A =	$(PRINTF)libftprintf.a
-
 COMPFLAG = cc -Wall -Werror -Wextra
 
 SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c \
@@ -32,7 +28,7 @@ $(NAME): $(OBJ)
 		ar -rc $(NAME) $(OBJ)
 
 $(LIBFTPRINTF_A):
-		make -C $(PRINTF)
+		make -C
 
 bonus: $(BONUSOBJ) $(OBJ)
 		ar -rc $(NAME) $(BONUSOBJ) $(OBJ)

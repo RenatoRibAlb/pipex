@@ -6,11 +6,11 @@
 /*   By: reribeir <reribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:08:13 by reribeir          #+#    #+#             */
-/*   Updated: 2024/10/29 16:59:46 by reribeir         ###   ########.fr       */
+/*   Updated: 2025/02/14 10:13:25 by reribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 int	ft_printnbr(long int c)
 {

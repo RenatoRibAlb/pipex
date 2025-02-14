@@ -6,7 +6,7 @@
 /*   By: reribeir <reribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 02:20:26 by reribeir          #+#    #+#             */
-/*   Updated: 2024/10/17 14:04:12 by reribeir         ###   ########.fr       */
+/*   Updated: 2025/02/14 10:25:49 by reribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static char	*word_find(char const *s, char c, int *i)
 	return (str);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char *s, char c)
 {
 	int		arri;
 	int		j;

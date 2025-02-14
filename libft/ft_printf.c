@@ -6,11 +6,11 @@
 /*   By: reribeir <reribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 07:10:14 by reribeir          #+#    #+#             */
-/*   Updated: 2024/11/25 14:52:27 by reribeir         ###   ########.fr       */
+/*   Updated: 2025/02/14 10:13:20 by reribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 static int	ft_printable(char c, va_list arguments)
 {

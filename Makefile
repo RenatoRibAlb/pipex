@@ -1,4 +1,4 @@
-NAME = pipex.a
+NAME = pipex
 
 LIBFT = libft/
 
@@ -6,7 +6,7 @@ LIBFT_A =	$(LIBFT)libft.a
 
 COMPFLAG = cc -Wall -Werror -Wextra
 
-SRC =
+SRC = pipex.c pipex_utils.c
 
 BONUS =
 
@@ -16,11 +16,8 @@ BONUSOBJ = $(BONUS:.c=.o)
 
 all: $(LIBFT_A) $(NAME)
 
-$(OBJ): $(SRC)
-		$(COMPFLAG) -c $(SRC)
-
 $(NAME): $(OBJ)
-		ar -rc $(NAME) $(OBJ)
+		$(COMPFLAG) $(OBJ) $(LIBFT_A) -o $(NAME)
 
 $(LIBFT_A):
 		make -C $(LIBFT)

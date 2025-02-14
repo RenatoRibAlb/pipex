@@ -6,21 +6,11 @@
 /*   By: reribeir <reribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 11:50:24 by reribeir          #+#    #+#             */
-/*   Updated: 2024/11/07 11:05:37 by reribeir         ###   ########.fr       */
+/*   Updated: 2025/02/14 10:15:37 by reribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-static int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 int	ft_printstring(char *c)
 {
