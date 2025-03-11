@@ -6,7 +6,7 @@
 /*   By: reribeir <reribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 07:02:50 by reribeir          #+#    #+#             */
-/*   Updated: 2025/02/14 10:24:21 by reribeir         ###   ########.fr       */
+/*   Updated: 2025/03/11 10:22:02 by reribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ typedef unsigned long	t_size;
 
 typedef struct s_list
 {
-	int			*content;
+	int				*content;
 	struct s_list	*next;
 }		t_list;
 

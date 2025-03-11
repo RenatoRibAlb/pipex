@@ -6,57 +6,60 @@
 /*   By: reribeir <reribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 10:38:08 by reribeir          #+#    #+#             */
-/*   Updated: 2025/02/14 15:30:20 by reribeir         ###   ########.fr       */
+/*   Updated: 2025/03/11 13:49:12 by reribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-char	*free_renew(char **renew)
+void	free_renew(char **renew1, char *renew2)
 {
 	int	i;
 
 	i = 0;
-	while(renew[i])
+	free(renew2);
+	while (renew1[i])
 	{
-		free(renew[i]);
+		free(renew1[i]);
 		i++;
 	}
-	return(*renew);
 }
 
 char	*path_finder(char **envp, char *av)
 {
-	char	**path;
+	char	**paths;
+	char	**cmd;
+	char	*path;
 	int		i;
 
 	i = 0;
-	while (!(ft_strncmp(envp[i], "PATH=", 5)))
+	while ((ft_strncmp(envp[i], "PATH=", 5)) != 0)
 		i++;
-	path = ft_split(envp[i + 5], ':');
-	while(path[i])
-	{
-		char	*arg;
-		char	*arg_path;
+	path = envp[i];
+	cmd = ft_split(av, ' ');
+	paths = ft_split(path + 5, ':');
+	return (check_access(paths, cmd[0]));
+}
 
-		arg = ft_strjoin(path[i], "/");
-		arg_path = ft_strjoin(arg, av);
-		if (access(arg_path, F_OK))
+char	*check_access(char **paths, char *cmd)
+{
+	char	*arg;
+	char	*arg_path;
+	int		i;
+
+	i = 0;
+	while (paths[i])
+	{
+		arg = ft_strjoin(paths[i], "/");
+		arg_path = ft_strjoin(arg, cmd);
+		if (access(arg_path, F_OK | X_OK) == 0)
 		{
-			free_renew(path);
-			free(arg);
+			free_renew(paths, arg);
 			return (arg_path);
 		}
 		free(arg);
 		free(arg_path);
 		i++;
 	}
-	return(NULL);
-}
-
-void	renew_pipe(int	fd[2])
-{
-	close(fd[0]);
-	close(fd[1]);
-	pipe(fd);
+	return (NULL);
 }
