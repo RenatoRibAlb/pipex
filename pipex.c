@@ -27,7 +27,7 @@ int	main(int ac, char **av, char *envp)
 	if (pid == 0)
 		c_process(**av, pipefd[0], envp);
 	waitpid(pid, 0, NULL);
-	p_process();
+	p_process(**av, pipefd[1], envp);
 	return(0);
 }
 
@@ -50,7 +50,7 @@ char	*path_finder(char **envp, char *av)
 		arg_path = ft_strjoin(arg, av[2]);
 		if (access(arg_path, F_OK));
 		{
-			//dar free na matriz path
+			free_renew(path);
 			free(arg);
 			return (arg_path);
 		}
@@ -70,7 +70,28 @@ void	c_process(char **av, int pipefd[2], char **envp)
 	if (dup2(pipefd[1], STDOUT_FILENO) == -1 || dup2(fd, STDIN_FILENO) == -1)
 		ft_putendl_fd("Error on dup2", 2);
 	path = path_finder(envp, av[2]);
+	execute_fd(path, av[3], envp);
 	//criar comando pro exec
 	//o comando tem que ser tratado como matriz
+}
 
+char	*free_renew(char **renew)
+{
+	int	i;
+
+	i = 0
+	while (renew[i])
+	{
+		free(renew[i]);
+		i++;
+	}
+	return(renew);
+}
+
+void	execute_fd(char *path, char *av, char **envp)
+{
+	char	**cmd_args;
+
+	cmd_args = ft_split(av, " ");
+	execve(path, cmd_args, NULL);
 }
